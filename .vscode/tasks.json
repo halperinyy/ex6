@@ -1,0 +1,21 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "gcc_build_active",
+            "command": "gcc",
+            "args": [
+              "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}_DEBUG.out", "-Wall", "-Wextra", "-Werror", "-g", "-std=c99", "-DDEBUG",
+            ],
+            "problemMatcher": ["$gcc"],
+            "group":
+            {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
