@@ -45,9 +45,9 @@ typedef struct PokemonData
 // Binary Tree Node (for Pokédex)
 typedef struct PokemonNode
 {
-    PokemonData *data;
-    struct PokemonNode *left;
-    struct PokemonNode *right;
+   PokemonData *data;
+   struct PokemonNode *left;
+   struct PokemonNode *right;
 } PokemonNode;
 
 // Linked List Node (for Owners)
@@ -61,6 +61,41 @@ typedef struct OwnerNode
 
 // Global head pointer for the linked list of owners
 OwnerNode *ownerHead = NULL;
+
+/*-------------------------------------------------------------------
+0) MINE
+---------------------------------------------------------------------*/
+
+PokemonNode* allocTreeNode(int id);
+void addNodeToTree(OwnerNode *owner, PokemonNode *newNode);
+OwnerNode* GetLastNode(OwnerNode* listHead);
+OwnerNode* AllocNewNode(char *ownerName);
+void AddNodeInLast(OwnerNode** listHead, OwnerNode* newNode);
+OwnerNode* AddNodeInHead(OwnerNode* listHead, OwnerNode* newNode);
+void AddNodeInPlace(OwnerNode* prevNode, OwnerNode* newNode, OwnerNode* listHead);
+PokemonNode* findInTree(PokemonNode* owner, int id);
+int tree_height(PokemonNode* root);
+void print_level(PokemonNode* root, int level_no);
+PokemonNode* allocABTreeNode(int id);
+void abTreePrint(PokemonNode* abroot);
+PokemonNode* CreateAlphabetTreeFromTree(PokemonNode* abroot, PokemonNode* src_node);
+void addToABtree(PokemonNode* abroot);
+void addNodeToABTree(PokemonNode *owner, PokemonNode *newNode);
+PokemonNode* remover(PokemonNode* inputNode);
+void freeTree(PokemonNode* node);
+void treeMerge(OwnerNode* Node1, PokemonNode* Node2);
+void deletePokedexForMerge(int choice);
+void addtofirsttree(PokemonNode* beingadded, OwnerNode* addedto);
+int deleteMenu();
+void creatpokemon(OwnerNode *owner, int id);
+int compareNames(char* name);
+void freePokemon2(OwnerNode *input, int id);
+
+
+
+
+
+
 
 /* ------------------------------------------------------------
    1) Safe Input + Utility
@@ -123,7 +158,7 @@ PokemonNode *createPokemonNode(const PokemonData *data);
  * @return newly allocated OwnerNode*
  * Why we made it: Each user is represented as an OwnerNode.
  */
-OwnerNode *createOwner(char *ownerName, PokemonNode *starter);
+OwnerNode *createOwner(char *ownerName);
 
 /**
  * @brief Free one PokemonNode (including name).
