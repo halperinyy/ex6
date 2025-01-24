@@ -71,8 +71,8 @@ void addNodeToTree(OwnerNode *owner, PokemonNode *newNode);
 OwnerNode* GetLastNode(OwnerNode* listHead);
 OwnerNode* AllocNewNode(char *ownerName);
 void AddNodeInLast(OwnerNode** listHead, OwnerNode* newNode);
-OwnerNode* AddNodeInHead(OwnerNode* listHead, OwnerNode* newNode);
-void AddNodeInPlace(OwnerNode* prevNode, OwnerNode* newNode, OwnerNode* listHead);
+void AddNodeInHead(OwnerNode** listHead, OwnerNode* newNode);
+void AddNodeInPlace(OwnerNode* lastNode, OwnerNode* newNode);
 PokemonNode* findInTree(PokemonNode* owner, int id);
 int tree_height(PokemonNode* root);
 void print_level(PokemonNode* root, int level_no);
@@ -84,7 +84,7 @@ void addNodeToABTree(PokemonNode *owner, PokemonNode *newNode);
 PokemonNode* remover(PokemonNode* inputNode);
 void freeTree(PokemonNode* node);
 void treeMerge(OwnerNode* Node1, PokemonNode* Node2);
-void deletePokedexForMerge(int choice);
+void deletePokedexForMerge(OwnerNode* ownerToBeFree);
 void addtofirsttree(PokemonNode* beingadded, OwnerNode* addedto);
 int deleteMenu();
 void creatpokemon(OwnerNode *owner, int id);
@@ -93,6 +93,11 @@ void freePokemon2(OwnerNode *input, int id);
 
 
 
+
+
+void ValidateAll(void);
+void ValidateTree(PokemonNode* node);
+void ValidateNode(PokemonNode* node);
 
 
 
