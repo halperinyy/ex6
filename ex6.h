@@ -69,7 +69,7 @@ OwnerNode *ownerHead = NULL;
 PokemonNode* allocTreeNode(int id);
 void addNodeToTree(OwnerNode *owner, PokemonNode *newNode);
 OwnerNode* GetLastNode(OwnerNode* listHead);
-OwnerNode* AllocNewNode(char *ownerName);
+OwnerNode* AllocNewOwnerNode(char *ownerName);
 void AddNodeInLast(OwnerNode** listHead, OwnerNode* newNode);
 void AddNodeInHead(OwnerNode** listHead, OwnerNode* newNode);
 void AddNodeInPlace(OwnerNode* lastNode, OwnerNode* newNode);
@@ -90,11 +90,13 @@ int deleteMenu();
 void creatpokemon(OwnerNode *owner, int id);
 int compareNames(char* name);
 void freePokemon2(OwnerNode *input, int id);
+OwnerNode* copyLinkedList(OwnerNode* oldHead);
+void swapOwnerNodes(OwnerNode** listHead, OwnerNode* nodeToSwap);
 
 
 
 
-
+/*functions i used for de bugging*/
 void ValidateAll(void);
 void ValidateTree(PokemonNode* node);
 void ValidateNode(PokemonNode* node);
